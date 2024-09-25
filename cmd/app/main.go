@@ -11,15 +11,15 @@ import (
 )
 
 func main() {
-	server := gin.Default()
+	engine := gin.Default()
 
-	server.GET("/ping", func(c *gin.Context) {
+	engine.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",
 		})
 	})
 
-	server.GET("/users", func(context *gin.Context) {
+	engine.GET("/users", func(context *gin.Context) {
 		limitStr := context.DefaultQuery("limit", "10")
 		limit, err := strconv.Atoi(limitStr)
 		if err != nil {
@@ -36,7 +36,7 @@ func main() {
 		})
 	})
 
-	err := server.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	err := engine.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 	if err != nil {
 		fmt.Println("Error: ", err)
 	}
