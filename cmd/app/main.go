@@ -18,8 +18,8 @@ func main() {
 	})
 
 	server.GET("/users", func(c *gin.Context) {
-		users := users.GenerateMockUsers(10)
-		c.JSON(http.StatusOK, users)
+		mockUsers := users.GenerateMockUsers(10)
+		c.JSON(http.StatusOK, mockUsers)
 	})
 
 	err := server.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
