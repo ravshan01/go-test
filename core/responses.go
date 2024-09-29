@@ -1,7 +1,7 @@
 package core
 
-type Response struct {
-	Data  interface{}    `json:"data"`
+type Response[T any] struct {
+	Data  *T             `json:"data"`
 	Error *ResponseError `json:"error,omitempty"`
 }
 
@@ -9,6 +9,8 @@ type ResponseError struct {
 	Message string `json:"message"`
 }
 
-type BadRequestResponse struct {
-	Response
+func NewBadRequestResponse(message string) Response[interface{}] {
+	return Response[interface{}]{
+		Error: &ResponseError{Message: message},
+	}
 }
