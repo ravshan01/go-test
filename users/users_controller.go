@@ -16,7 +16,7 @@ func NewUsersController() *UsersController {
 	}
 }
 
-func (c *UsersController) init(engine *gin.Engine) {
+func (c *UsersController) Init(engine *gin.Engine) {
 	engine.GET("/users", func(ctx *gin.Context) {
 		limit, err := strconv.Atoi(ctx.DefaultQuery("limit", "10"))
 		if err != nil {
