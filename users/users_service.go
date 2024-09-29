@@ -7,8 +7,8 @@ func (s *UsersService) find(params UsersServiceFindParams) ([]User, error) {
 	return make([]User, 0), nil
 }
 
-func (s *UsersService) findById(id string) (User, error) {
-	return User{}, nil
+func (s *UsersService) findById(id string) (*User, error) {
+	return nil, nil
 }
 
 func (s *UsersService) create(user UserCreate) (User, error) {
