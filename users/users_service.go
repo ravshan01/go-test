@@ -3,26 +3,26 @@ package users
 type UsersService struct {
 }
 
-func (s *UsersService) find(params UsersServiceFindParams) ([]User, error) {
+func (s *UsersService) Find(params UsersServiceFindParams) ([]User, error) {
 	return make([]User, 0), nil
 }
 
-func (s *UsersService) findById(id string) (*User, error) {
+func (s *UsersService) FindById(id string) (*User, error) {
 	return nil, nil
 }
 
-func (s *UsersService) create(user UserCreate) (User, error) {
+func (s *UsersService) Create(user UserCreate) (User, error) {
 	return User{}, nil
 }
 
-func (s *UsersService) update(user UserUpdate) (User, error) {
+func (s *UsersService) Update(user UserUpdate) (User, error) {
 	return User{}, nil
 }
 
-func (s *UsersService) partialUpdate(id string, user UserPartialUpdate) (User, error) {
+func (s *UsersService) PartialUpdate(id string, user UserPartialUpdate) (User, error) {
 	return User{}, nil
 }
 
-func (s *UsersService) delete(id string) error {
+func (s *UsersService) Delete(id string) error {
 	return nil
 }

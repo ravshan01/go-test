@@ -43,7 +43,7 @@ func (c *UsersController) find(ctx *gin.Context) {
 		Offset: offset,
 	}
 
-	users, err := c.usersService.find(params)
+	users, err := c.usersService.Find(params)
 	if err != nil {
 		ctx.JSON(500, gin.H{
 			"error": err.Error(),
@@ -56,7 +56,7 @@ func (c *UsersController) find(ctx *gin.Context) {
 func (c *UsersController) findById(ctx *gin.Context) {
 	id := ctx.Param("id")
 
-	user, err := c.usersService.findById(id)
+	user, err := c.usersService.FindById(id)
 	if err != nil {
 		ctx.JSON(500, gin.H{
 			"error": err.Error(),
@@ -79,7 +79,7 @@ func (c *UsersController) create(ctx *gin.Context) {
 		return
 	}
 
-	newUser, err := c.usersService.create(userCreate)
+	newUser, err := c.usersService.Create(userCreate)
 	if err != nil {
 		ctx.JSON(500, gin.H{
 			"error": err.Error(),
@@ -98,7 +98,7 @@ func (c *UsersController) update(ctx *gin.Context) {
 		return
 	}
 
-	updatedUser, err := c.usersService.update(user)
+	updatedUser, err := c.usersService.Update(user)
 	if err != nil {
 		ctx.JSON(500, gin.H{
 			"error": err.Error(),
@@ -119,7 +119,7 @@ func (c *UsersController) partialUpdate(ctx *gin.Context) {
 		return
 	}
 
-	updatedUser, err := c.usersService.partialUpdate(id, user)
+	updatedUser, err := c.usersService.PartialUpdate(id, user)
 	if err != nil {
 		ctx.JSON(500, gin.H{
 			"error": err.Error(),
@@ -133,7 +133,7 @@ func (c *UsersController) partialUpdate(ctx *gin.Context) {
 func (c *UsersController) delete(ctx *gin.Context) {
 	id := ctx.Param("id")
 
-	err := c.usersService.delete(id)
+	err := c.usersService.Delete(id)
 	if err != nil {
 		ctx.JSON(500, gin.H{
 			"error": err.Error(),

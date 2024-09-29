@@ -1,12 +1,12 @@
 package users
 
 type IUsersService interface {
-	find(params UsersServiceFindParams) ([]User, error)
-	findById(id string) (*User, error)
-	create(user UserCreate) (User, error)
-	update(user UserUpdate) (User, error)
-	partialUpdate(id string, user UserPartialUpdate) (User, error)
-	delete(id string) error
+	Find(params UsersServiceFindParams) ([]User, error)
+	FindById(id string) (*User, error)
+	Create(user UserCreate) (User, error)
+	Update(user UserUpdate) (User, error)
+	PartialUpdate(id string, user UserPartialUpdate) (User, error)
+	Delete(id string) error
 }
 
 type UsersServiceFindParams struct {
