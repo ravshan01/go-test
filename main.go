@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"go-test/core"
+	"go-test/users"
 	"net/http"
 )
 
@@ -25,6 +27,9 @@ func startServer(host, port string) error {
 			"message": "pong",
 		})
 	})
+
+	var usersController core.IController = users.NewUsersController()
+	usersController.Init(engine)
 
 	return engine.Run(fmt.Sprintf("%s:%s", host, port))
 }
