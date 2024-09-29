@@ -21,7 +21,7 @@ func (c *UsersController) Init(engine *gin.Engine) {
 		limit, err := strconv.Atoi(ctx.DefaultQuery("limit", "10"))
 		if err != nil {
 			ctx.JSON(400, core.BadRequestResponse{core.Response{
-				Error: core.ResponseError{Message: "Invalid limit"},
+				Error: &core.ResponseError{Message: "Invalid limit"},
 			}})
 			return
 		}
@@ -29,7 +29,7 @@ func (c *UsersController) Init(engine *gin.Engine) {
 		offset, err := strconv.Atoi(ctx.DefaultQuery("offset", "0"))
 		if err != nil {
 			ctx.JSON(400, core.BadRequestResponse{core.Response{
-				Error: core.ResponseError{Message: "Invalid offset"},
+				Error: &core.ResponseError{Message: "Invalid offset"},
 			}})
 			return
 		}

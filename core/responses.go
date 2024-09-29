@@ -1,8 +1,8 @@
 package core
 
 type Response struct {
-	Data  interface{}   `json:"data"`
-	Error ResponseError `json:"error,omitempty"`
+	Data  interface{}    `json:"data"`
+	Error *ResponseError `json:"error,omitempty"`
 }
 
 type ResponseError struct {
